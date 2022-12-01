@@ -10,11 +10,11 @@ void display()
 {
 	struct node *ptr;
 	if(head==NULL)
-	printf("\nLinked list is empty");
+	printf("\nLINKED LIST IS EMPTY");
 	else
 	{
 		ptr=head;
-		printf("\nLinked list elements are:");
+		printf("\nLINKED LIST ELEMENTS ARE:");
 		while(ptr!=NULL)
 		{
 			printf("%d\t",ptr->data);
@@ -60,14 +60,14 @@ void insertafter(int key,int x)
 {
 	struct node *new,*ptr;
 	if(head==NULL)
-	printf("Insertion is not possible");
+	printf("INSERTION IS NOT POSSIBLE");
 	else
 	{
 		ptr=head;
 		while(ptr->data!=key && ptr->next!=NULL)
 		ptr=ptr->next;
 		if(ptr->data!=key)
-		printf("Insertion not possible");
+		printf("INSERTION IS NOT POSSIBLE");
 		else
 		{
 			new=(struct node *)malloc(sizeof(struct node));
@@ -85,7 +85,7 @@ void deletefront()
 {
 	struct node *temp;
 	if(head==NULL)
-	printf("Deletion not possible");
+	printf("DELETION IS NOT POSSIBLE");
 	else if(head->next==NULL)
 	{
 		temp=head;
@@ -104,7 +104,7 @@ void deleteend()
 {
 	struct node *ptr,*temp;
 	if(head==NULL)
-	printf("Deletion not possible");
+	printf("DELETION IS NOT POSSIBLE");
 	else if(head->next==NULL)
 	{
 		temp=head;
@@ -123,7 +123,7 @@ void deleteend()
 }
 void deleteany(int pos)
 {
-	int i=1;
+	int i=0;
 	struct node *temp;
 	temp=head;
 	while(i<pos)
@@ -141,7 +141,7 @@ void search(int key)
 	int count=1;
 	struct node *ptr;
 	if(head==NULL)
-	printf("Key not found");
+	printf("KEY NOT FOUND");
 	else
 	{
 		ptr=head;
@@ -151,9 +151,9 @@ void search(int key)
 			count++;
 		}
 		if(ptr->data=key)
-		printf("Key is found at %d",count);
+		printf("KEY IS FOUND AT %d",count);
 		else
-		printf("Key not found");
+		printf("KEY NOT FOUND");
 	}
 }
 void main()
@@ -161,22 +161,22 @@ void main()
 	int ch,x,key,pos;
 	do
 	{
-		printf("\n1.Insert front\n2.Insert end\n3.Insert after\n4.Delete front\n5.Delete end\n6.Delete any\n7.Display\n8.Search\n9.Exit\n");
-		printf("Enter the choice");
+		printf("\n1.INSERT FRONT\n2.INSERT END\n3.INSERT AFTER\n4.DELETE FRONT\n5.DELETE END\n6.DELETE ANY\n7.DISPLAY\n8.SEARCH\n9.EXIT\n");
+		printf("ENTER THE CHOICE");
 		scanf("%d",&ch);
 		switch(ch)
 		{
-			case 1 : printf("Enter new data:");
+			case 1 : printf("ENTER NEW DATA:");
 			scanf("%d",&x);
 			insertfront(x);
 			break;
-			case 2 : printf("Enter new data:");
+			case 2 : printf("ENTER NEW DATA:");
 			scanf("%d",&x);
 			insertend(x);
 			break;
-			case 3 : printf("Enter search key:");
+			case 3 : printf("ENTER SEARCH KEY:");
 			scanf("%d",&key);
-			printf("Enter new data:");
+			printf("ENTER NEW DATA:");
 			scanf("%d",&x);
 			insertafter(key,x);
 			break;
@@ -184,18 +184,18 @@ void main()
 			break;
 			case 5 : deleteend();
 			break;
-			case 6 : printf("Enter position of node to be deleted");
+			case 6 : printf("ENTER POSITION OF NODE TO BE DELETED");
 			scanf("%d",&pos);
 			deleteany(pos);
 			break;
 			case 7 : display();
 			break;
-			case 8 : printf("Enter the key to be searched:");
+			case 8 : printf("ENTER THE KEY TO BE SEARCHED:");
 			scanf("%d",&key);
 			search(key);
 			break;
 			case 9 : break;
-			default: printf("Invalid choice");
+			default: printf("INVALID CHOICE");
 		}
 	}while(ch!=9);
 }
